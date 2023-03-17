@@ -24,13 +24,13 @@ public class Drink {
     @GeneratedValue(generator = "Long")
     private Long id;
 
-    private String drinkName;
+    private String Name;
     private Long price;
 
     private DrinkStyle drinkStyle;
 
     @ManyToOne
-    private Set<Company> maker = new HashSet<>();
+    private Set<Company> maker;
     @CreationTimestamp
     private LocalDateTime createdDate;
 
