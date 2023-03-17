@@ -15,4 +15,6 @@ public interface DrinkRepository extends JpaRepository<Drink, Long> {
     Page<Drink> findAllByMaker(String maker, Pageable pageable);
 
     Optional<Drink> findByName(String name);
+
+
 }

@@ -18,10 +18,9 @@ public class DrinkService {
 
     private final DrinkRepository drinkRepository;
 
-    public Page<Drink> listDrink(){
-        Page<Drink> drinkPage = null;
+    public List<Drink> listDrink(){
         List<Drink> list = drinkRepository.findAll();
-        return drinkPage;
+        return list;
     }
 
 
@@ -32,5 +31,14 @@ public class DrinkService {
     public Optional<Drink> findDrinkByName(String name){
         return Optional.ofNullable(drinkRepository.findByName(name).orElse(null));
     }
+
+    public Boolean deleteById(Long id){
+        if(drinkRepository.existsById(id)){
+            drinkRepository.deleteById(id);
+            return true;
+        }
+        return false;
+    }
+
 
 }
