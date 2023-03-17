@@ -18,17 +18,17 @@ public class CompanyService {
     private final CompanyRepository companyRepository;
 
 
-    public List<Company> listDrink(){
+    public List<Company> listCompany(){
         List<Company> list = companyRepository.findAll();
         return list;
     }
 
 
-    public Company saveNewDrink(Company company){
+    public Company saveNewCompany(Company company){
         return companyRepository.save(company);
     }
 
-    public Optional<Company> findDrinkByName(String name){
+    public Optional<Company> findCompanyByName(String name){
         return Optional.ofNullable(companyRepository.findByName(name).orElse(null));
     }
 
