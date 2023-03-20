@@ -1,15 +1,13 @@
 package Guru.demo.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -28,6 +26,10 @@ public class Company {
 
     @UpdateTimestamp
     private LocalDateTime updateDate;
+
+    @Builder.Default
+    @OneToMany
+    private Set<Drink> drinkSet = new HashSet<>();
 
 
 }

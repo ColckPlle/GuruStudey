@@ -29,7 +29,7 @@ public class DrinkService {
     }
 
     public Optional<Drink> findDrinkByName(String name){
-        return Optional.ofNullable(drinkRepository.findByName(name).orElse(null));
+        return Optional.ofNullable(drinkRepository.findByDrinkName(name).orElse(null));
     }
 
     public Boolean deleteById(Long id){

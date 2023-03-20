@@ -29,7 +29,7 @@ public class CompanyService {
     }
 
     public Optional<Company> findCompanyByName(String name){
-        return Optional.ofNullable(companyRepository.findByName(name).orElse(null));
+        return Optional.ofNullable(companyRepository.findByCompanyName(name).orElse(null));
     }
 
     public Boolean deleteById(Long id){

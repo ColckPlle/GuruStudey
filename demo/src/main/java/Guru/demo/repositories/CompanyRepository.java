@@ -12,7 +12,6 @@ import java.util.Optional;
 @Repository
 public interface CompanyRepository extends JpaRepository<Company,Long> {
 
-    Page<Company> findAllByMaker(String maker, Pageable pageable);
 
-    Optional<Company> findByName(String name);
+    Optional<Company> findByCompanyName(String name);
 }

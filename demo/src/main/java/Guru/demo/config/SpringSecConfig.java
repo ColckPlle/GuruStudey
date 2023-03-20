@@ -10,10 +10,9 @@ public class SpringSecConfig {
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        http.authorizeHttpRequests().anyRequest()
-                .permitAll()
-                .anyRequest().authenticated()
-                .and().oauth2ResourceServer().jwt();
+        http.authorizeHttpRequests()
+                .anyRequest()
+                .permitAll();
 
         return http.build();
     }
